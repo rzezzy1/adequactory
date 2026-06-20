@@ -17,6 +17,26 @@ class StackSize(Enum):
     SS_FLUID = 50000
 
 
+class BuildableManufacturer(Enum):
+    BM_CONSTRUCTOR = "ConstructorMk1"
+    BM_SMELTER = "SmelterMk1"
+    BM_FOUNDRY = "FoundryMk1"
+    BM_REFINERY = "OilRefinery"
+    BM_PACKAGER = "Packager"
+    BM_MANUFACTURER = "ManufacturerMk1"
+    BM_ASSEMBLER = "AssemblerMk1"
+    BM_BLENDER = "Blender"
+
+
+class TierList(Enum):
+    TL_S = 0
+    TL_A = 1
+    TL_B = 2
+    TL_C = 3
+    TL_D = 4
+    TL_F = 5
+
+
 @dataclass
 class Item:
     item_name: str
@@ -26,3 +46,28 @@ class Item:
     resource_sink_points: int = 0
     energy_value: float = 0.0
     form: Form = Form.RF_SOLID
+
+
+@dataclass
+class Ingredient:
+    item_name: Item
+    ingredient_amount: int
+
+
+@dataclass
+class VariablePower:
+    constant: float
+    factor: float
+
+
+@dataclass
+class Recipe:
+    recipe_name: str
+    display_name: str
+    ingredients: list[Ingredient]
+    products: list[Ingredient]
+    host_machine: BuildableManufacturer
+    recipe_time: float
+    variable_power: VariablePower
+    alternate: bool
+    is_unlocked: bool
