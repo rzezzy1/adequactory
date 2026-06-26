@@ -15,5 +15,3 @@ for category in docs_raw:
     docs_unwrap[category_name] = {}
     for class_dict in category["Classes"]:
         docs_unwrap[category_name][class_dict["ClassName"]] = class_dict
-
-print(docs_unwrap["FGRecipe"]["Recipe_IronPlate_C"]["mProducedIn"])
