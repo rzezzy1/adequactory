@@ -17,6 +17,7 @@ class StackSize(Enum):
     SS_FLUID = 50000
 
 
+# # TODO: add buildings not found in NativeClass BuildableManufacturer
 class BuildableManufacturer(Enum):
     BM_CONSTRUCTOR = "ConstructorMk1"
     BM_SMELTER = "SmelterMk1"
@@ -56,8 +57,8 @@ class Ingredient:
 
 @dataclass
 class VariablePower:
-    constant: float
-    factor: float
+    constant: float = 0
+    factor: float = 1
 
 
 @dataclass
@@ -66,8 +67,8 @@ class Recipe:
     display_name: str
     ingredients: list[Ingredient]
     products: list[Ingredient]
-    host_machine: BuildableManufacturer
+    produced_in: BuildableManufacturer
     recipe_time: float
     variable_power: VariablePower
     alternate: bool
-    is_unlocked: bool
+    is_unlocked: bool = True
