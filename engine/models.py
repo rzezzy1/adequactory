@@ -3,18 +3,18 @@ from enum import Enum
 
 
 class Form(Enum):
-    RF_SOLID = "RF_SOLID"
-    RF_LIQUID = "RF_LIQUID"
-    RF_GAS = "RF_GAS"
+    SOLID = "RF_SOLID"
+    LIQUID = "RF_LIQUID"
+    GAS = "RF_GAS"
 
 
 class StackSize(Enum):
-    SS_ONE = 1
-    SS_SMALL = 50
-    SS_MEDIUM = 100
-    SS_BIG = 200
-    SS_HUGE = 500
-    SS_FLUID = 50000
+    ONE = 1
+    SMALL = 50
+    MEDIUM = 100
+    BIG = 200
+    HUGE = 500
+    FLUID = 50000
 
 
 # # TODO: add buildings not found in NativeClass BuildableManufacturer
@@ -32,13 +32,13 @@ class BuildableManufacturerName(Enum):
     ENCODER = "QuantumEncoder"
 
 
-class TierList(Enum):
-    TL_S = 0
-    TL_A = 1
-    TL_B = 2
-    TL_C = 3
-    TL_D = 4
-    TL_F = 5
+# class TierList(Enum):
+#     S = 0
+#     A = 1
+#     B = 2
+#     C = 3
+#     D = 4
+#     F = 5
 
 
 @dataclass
@@ -69,13 +69,13 @@ class BuildableManufacturer:
     building_name: BuildableManufacturerName
     display_name: str
     power_active: float
-    power_idle: float
     input_belts: int
     input_pipes: int
     output_belts: int
     output_pipes: int
     max_somersloops: int
     is_unlocked: bool = True
+    power_idle: float = 0.1
 
 
 @dataclass
