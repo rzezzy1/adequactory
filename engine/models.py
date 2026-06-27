@@ -70,12 +70,13 @@ class BuildableManufacturer:
     display_name: str
     power_active: float
     input_belts: int
-    input_pipes: int
     output_belts: int
-    output_pipes: int
     max_somersloops: int
+    input_pipes: int = 0
+    output_pipes: int = 0
     is_unlocked: bool = True
     power_idle: float = 0.1
+    variable_power: bool = False
 
 
 @dataclass
