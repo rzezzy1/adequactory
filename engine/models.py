@@ -19,17 +19,17 @@ class StackSize(Enum):
 
 # # TODO: add buildings not found in NativeClass BuildableManufacturer
 class BuildableManufacturerName(Enum):
-    BM_CONSTRUCTOR = "ConstructorMk1"
-    BM_SMELTER = "SmelterMk1"
-    BM_FOUNDRY = "FoundryMk1"
-    BM_REFINERY = "OilRefinery"
-    BM_PACKAGER = "Packager"
-    BM_MANUFACTURER = "ManufacturerMk1"
-    BM_ASSEMBLER = "AssemblerMk1"
-    BM_BLENDER = "Blender"
-    BM_ACCELERATOR = "HadronCollider"
-    BM_CONVERTER = "Converter"
-    BM_ENCODER = "QuantumEncoder"
+    CONSTRUCTOR = "ConstructorMk1"
+    SMELTER = "SmelterMk1"
+    FOUNDRY = "FoundryMk1"
+    REFINERY = "OilRefinery"
+    PACKAGER = "Packager"
+    MANUFACTURER = "ManufacturerMk1"
+    ASSEMBLER = "AssemblerMk1"
+    BLENDER = "Blender"
+    ACCELERATOR = "HadronCollider"
+    CONVERTER = "Converter"
+    ENCODER = "QuantumEncoder"
 
 
 class TierList(Enum):
