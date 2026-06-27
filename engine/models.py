@@ -18,7 +18,7 @@ class StackSize(Enum):
 
 
 # # TODO: add buildings not found in NativeClass BuildableManufacturer
-class BuildableManufacturer(Enum):
+class BuildableManufacturerName(Enum):
     BM_CONSTRUCTOR = "ConstructorMk1"
     BM_SMELTER = "SmelterMk1"
     BM_FOUNDRY = "FoundryMk1"
@@ -27,6 +27,9 @@ class BuildableManufacturer(Enum):
     BM_MANUFACTURER = "ManufacturerMk1"
     BM_ASSEMBLER = "AssemblerMk1"
     BM_BLENDER = "Blender"
+    BM_ACCELERATOR = "HadronCollider"
+    BM_CONVERTER = "Converter"
+    BM_ENCODER = "QuantumEncoder"
 
 
 class TierList(Enum):
@@ -59,6 +62,20 @@ class Ingredient:
 class VariablePower:
     constant: float = 0
     factor: float = 1
+
+
+@dataclass
+class BuildableManufacturer:
+    building_name: BuildableManufacturerName
+    display_name: str
+    power_active: float
+    power_idle: float
+    input_belts: int
+    input_pipes: int
+    output_belts: int
+    output_pipes: int
+    max_somersloops: int
+    is_unlocked: bool = True
 
 
 @dataclass
