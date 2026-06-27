@@ -49,7 +49,7 @@ class Item:
     can_be_discarded: bool = True
     resource_sink_points: int = 0
     energy_value: float = 0.0
-    form: Form = Form.RF_SOLID
+    form: Form = Form.SOLID
 
 
 @dataclass
