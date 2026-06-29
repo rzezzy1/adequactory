@@ -9,12 +9,12 @@ class Form(Enum):
 
 
 class StackSize(Enum):
-    ONE = 1
-    SMALL = 50
-    MEDIUM = 100
-    BIG = 200
-    HUGE = 500
-    FLUID = 50000
+    SS_ONE = 1
+    SS_SMALL = 50
+    SS_MEDIUM = 100
+    SS_BIG = 200
+    SS_HUGE = 500
+    SS_FLUID = 50000
 
 
 # # TODO: add buildings not found in NativeClass BuildableManufacturer
