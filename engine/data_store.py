@@ -6,7 +6,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.CONSTRUCTOR: BuildableManufacturer(
         building_name=BuildableManufacturerName.CONSTRUCTOR,
         display_name="Constructor",
-        power_active=4,
+        power_active=4.0,
         input_belts=1,
         output_belts=1,
         max_somersloops=1,
@@ -14,7 +14,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.SMELTER: BuildableManufacturer(
         building_name=BuildableManufacturerName.SMELTER,
         display_name="Smelter",
-        power_active=4,
+        power_active=4.0,
         input_belts=1,
         output_belts=1,
         max_somersloops=1,
@@ -22,7 +22,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.FOUNDRY: BuildableManufacturer(
         building_name=BuildableManufacturerName.FOUNDRY,
         display_name="Foundry",
-        power_active=16,
+        power_active=16.0,
         input_belts=2,
         output_belts=1,
         max_somersloops=2,
@@ -30,7 +30,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.REFINERY: BuildableManufacturer(
         building_name=BuildableManufacturerName.REFINERY,
         display_name="Refinery",
-        power_active=30,
+        power_active=30.0,
         input_belts=1,
         output_belts=1,
         max_somersloops=2,
@@ -40,7 +40,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.PACKAGER: BuildableManufacturer(
         building_name=BuildableManufacturerName.PACKAGER,
         display_name="Packager",
-        power_active=10,
+        power_active=10.0,
         input_belts=1,
         output_belts=1,
         max_somersloops=0,
@@ -50,7 +50,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.MANUFACTURER: BuildableManufacturer(
         building_name=BuildableManufacturerName.MANUFACTURER,
         display_name="Manufacturer",
-        power_active=55,
+        power_active=55.0,
         input_belts=4,
         output_belts=1,
         max_somersloops=4,
@@ -58,7 +58,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.ASSEMBLER: BuildableManufacturer(
         building_name=BuildableManufacturerName.ASSEMBLER,
         display_name="Assembler",
-        power_active=15,
+        power_active=15.0,
         input_belts=2,
         output_belts=1,
         max_somersloops=2,
@@ -66,7 +66,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.BLENDER: BuildableManufacturer(
         building_name=BuildableManufacturerName.BLENDER,
         display_name="Blender",
-        power_active=75,
+        power_active=75.0,
         input_belts=2,
         output_belts=1,
         max_somersloops=4,
@@ -76,7 +76,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.ACCELERATOR: BuildableManufacturer(
         building_name=BuildableManufacturerName.ACCELERATOR,
         display_name="Particle Accelerator",
-        power_active=0,
+        power_active=0.0,
         input_belts=2,
         input_pipes=1,
         output_belts=1,
@@ -86,7 +86,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.CONVERTER: BuildableManufacturer(
         building_name=BuildableManufacturerName.CONVERTER,
         display_name="Converter",
-        power_active=0,
+        power_active=0.0,
         input_belts=2,
         output_belts=1,
         output_pipes=1,
@@ -96,7 +96,7 @@ production_buildings: dict[BuildableManufacturerName, BuildableManufacturer] = {
     BuildableManufacturerName.ENCODER: BuildableManufacturer(
         building_name=BuildableManufacturerName.ENCODER,
         display_name="Quantum Encoder",
-        power_active=0,
+        power_active=0.0,
         input_belts=3,
         input_pipes=1,
         output_belts=1,
