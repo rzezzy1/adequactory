@@ -79,7 +79,11 @@ def find_item(item_name: str, expected_categories: list[str]) -> Item | None:
 
 
 for target_recipe in docs_unwrap["FGRecipe"].values():
-    if "Recipe.Part" in target_recipe["mGameplayTags"]:
+    buildings_list = target_recipe["mProducedIn"]
+    buildings_list_parsed = re.findall(r".+?Factory/(\w+)/Build", buildings_list)
+    if "AutomatedWorkBench" in buildings_list_parsed:
+        buildings_list_parsed.remove("AutomatedWorkBench")
+    if len(buildings_list_parsed) == 1:
         target_ingredients_raw = target_recipe["mIngredients"]
         target_ingredients_cleaned = re.findall(
             r".+?\.(Desc_\w+_C)\'\",Amount=(\d+).*?", target_ingredients_raw
@@ -122,9 +126,6 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
                 f"Unexpected production building data for {target_recipe['ClassName']}:\n{buildings_list}\n{buildings_list_parsed}"
             )
         if len(buildings_list_parsed) == 0:
-            print(
-                f"{target_recipe['ClassName']} has the Recipe.Part tag but no proper production buildings"
-            )
             continue
 
         recipes[target_recipe["ClassName"]] = Recipe(
@@ -142,3 +143,5 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
             ),
             alternate="AlternateRecipes" in target_recipe["FullName"],
         )
+
+print(len(recipes))
