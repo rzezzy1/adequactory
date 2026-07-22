@@ -113,9 +113,9 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
                     raise ValueError(f"Could not find data for {product_name}")
                 else:
                     items[product_name] = item_data
-                    target_products_cooked.append(
-                        Ingredient(items[product_name], int(product_tuple[1]))
-                    )
+            target_products_cooked.append(
+                Ingredient(items[product_name], int(product_tuple[1]))
+            )
 
         buildings_list = target_recipe["mProducedIn"]
         buildings_list_parsed = re.findall(r".+?Factory/(\w+)/Build", buildings_list)
@@ -143,5 +143,3 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
             ),
             alternate="AlternateRecipes" in target_recipe["FullName"],
         )
-
-print(len(recipes))
