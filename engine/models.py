@@ -54,7 +54,7 @@ class Item:
 
 @dataclass
 class Ingredient:
-    item_object: Item
+    item_name: str
     ingredient_amount: int
 
 

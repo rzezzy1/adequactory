@@ -103,7 +103,7 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
                 else:
                     items[ingredient_name] = item_data
             target_ingredients_cooked.append(
-                Ingredient(items[ingredient_name], int(ingredient_tuple[1]))
+                Ingredient(ingredient_name, int(ingredient_tuple[1]))
             )
         for product_tuple in target_products_cleaned:
             product_name = product_tuple[0]
@@ -114,7 +114,7 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
                 else:
                     items[product_name] = item_data
             target_products_cooked.append(
-                Ingredient(items[product_name], int(product_tuple[1]))
+                Ingredient(product_name, int(product_tuple[1]))
             )
 
         buildings_list = target_recipe["mProducedIn"]
