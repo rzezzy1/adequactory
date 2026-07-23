@@ -27,18 +27,18 @@ for consider_recipe in recipes.values():
     if consider_recipe.products == []:
         # print(f'{consider_recipe.display_name}\'s products are missing')
         missing_products_count+=1
-    for search_product in consider_recipe.products:
+    for search_product in consider_recipe.products.keys():
         # if "Plate" in consider_recipe.display_name:
             # print(f'{consider_recipe.display_name} has \"Plate\" in its name')
-        if search_product.item_name == target_item.item_name:
+        if search_product == target_item.item_name:
             # print(f'{consider_recipe.display_name} has been found to produce {target_item.item_name}! Adding to recipe set.')
             relevant_recipes.add(consider_recipe.recipe_name)
-            for add_ingredient in consider_recipe.ingredients:
-                if add_ingredient.item_name not in all_ingredients:
-                    all_ingredients.append(add_ingredient.item_name)
-            for add_product in consider_recipe.products:
-                if add_product.item_name not in all_products:
-                    all_products.append(add_product.item_name)
+            for add_ingredient in consider_recipe.ingredients.keys():
+                if add_ingredient not in all_ingredients:
+                    all_ingredients.append(add_ingredient)
+            for add_product in consider_recipe.products.keys():
+                if add_product not in all_products:
+                    all_products.append(add_product)
 
 ingredient_iterator = 0
 while ingredient_iterator < len(all_ingredients):
@@ -50,21 +50,21 @@ while ingredient_iterator < len(all_ingredients):
         if consider_recipe.products == []:
             # print(f'{consider_recipe.display_name}\'s products are missing')
             missing_products_count+=1
-        for search_product in consider_recipe.products:
+        for search_product in consider_recipe.products.keys():
             # if "Plate" in consider_recipe.display_name:
             #    # print(f'{consider_recipe.display_name} has \"Plate\" in its name')
             #    # print(f'{search_product.item_name}')
-            if search_product.item_name == target_item.item_name:
+            if search_product == target_item.item_name:
                 # print(f'{consider_recipe.display_name} has been found to produce {target_item.item_name}! Adding to recipe set.')
                 relevant_recipes.add(consider_recipe.recipe_name)
-                for add_ingredient in consider_recipe.ingredients:
-                    if add_ingredient.item_name not in all_ingredients:
-                        all_ingredients.append(add_ingredient.item_name)
+                for add_ingredient in consider_recipe.ingredients.keys():
+                    if add_ingredient not in all_ingredients:
+                        all_ingredients.append(add_ingredient)
                         # print(f'{consider_recipe.recipe_name} added {add_ingredient.item_object.item_name}')
                         # print(len(all_ingredients))
-                for add_product in consider_recipe.products:
-                    if add_product.item_name not in all_products:
-                        all_products.append(add_product.item_name)
+                for add_product in consider_recipe.products.keys():
+                    if add_product not in all_products:
+                        all_products.append(add_product)
     ingredient_iterator+=1
 
 relevant_items = list(set(all_ingredients).union(set(all_products)))
@@ -76,8 +76,8 @@ recipe_vars = {
     for recipe_name in relevant_recipes
 }
 
-# def production_coefficient(item_name: str, recipe_name: str) -> float:
-#     coeff = 0
+def production_coefficient(item_name: str, recipe_name: str) -> float:
+    coeff = 0
 
 
-#     return coeff
+    return coeff

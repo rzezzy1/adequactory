@@ -6,7 +6,6 @@ from engine.data_store import items, production_buildings, recipes
 from engine.models import (
     BuildableManufacturerName,
     Form,
-    Ingredient,
     Item,
     Recipe,
     StackSize,
@@ -92,8 +91,8 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
         target_products_cleaned = re.findall(
             r".+?\.(Desc_\w+_C)\'\",Amount=(\d+).*?", target_products_raw
         )
-        target_ingredients_cooked = []
-        target_products_cooked = []
+        target_ingredients_cooked = {}
+        target_products_cooked = {}
         for ingredient_tuple in target_ingredients_cleaned:
             ingredient_name = ingredient_tuple[0]
             if ingredient_name not in items:
@@ -102,9 +101,8 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
                     raise ValueError(f"Could not find data for {ingredient_name}")
                 else:
                     items[ingredient_name] = item_data
-            target_ingredients_cooked.append(
-                Ingredient(ingredient_name, int(ingredient_tuple[1]))
-            )
+            target_ingredients_cooked[ingredient_name] = int(ingredient_tuple[1])
+
         for product_tuple in target_products_cleaned:
             product_name = product_tuple[0]
             if product_name not in items:
@@ -113,9 +111,7 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
                     raise ValueError(f"Could not find data for {product_name}")
                 else:
                     items[product_name] = item_data
-            target_products_cooked.append(
-                Ingredient(product_name, int(product_tuple[1]))
-            )
+            target_products_cooked[product_name] = int(product_tuple[1])
 
         buildings_list = target_recipe["mProducedIn"]
         buildings_list_parsed = re.findall(r".+?Factory/(\w+)/Build", buildings_list)

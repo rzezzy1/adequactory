@@ -53,12 +53,6 @@ class Item:
 
 
 @dataclass
-class Ingredient:
-    item_name: str
-    ingredient_amount: int
-
-
-@dataclass
 class VariablePower:
     constant: float = 0
     factor: float = 1
@@ -83,8 +77,8 @@ class BuildableManufacturer:
 class Recipe:
     recipe_name: str
     display_name: str
-    ingredients: list[Ingredient]
-    products: list[Ingredient]
+    ingredients: dict[str, int]
+    products: dict[str, int]
     produced_in: BuildableManufacturer
     recipe_time: float
     variable_power: VariablePower
