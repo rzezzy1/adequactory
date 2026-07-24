@@ -49,7 +49,7 @@ def find_item(item_name: str, expected_categories: list[str]) -> Item | None:
     # The check for already being documented will happen outside this function
     # Find the data for the item with this name, starting with the "Expected categories"
     for category in expected_categories:
-        if item_name in docs_unwrap[category].keys():
+        if item_name in docs_unwrap[category]:
             item_data = docs_unwrap[category][item_name]
             return Item(
                 item_name=item_data["ClassName"],
