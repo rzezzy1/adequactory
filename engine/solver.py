@@ -1,10 +1,12 @@
-from pulp.pulp import LpVariable
-
+from engine.models import Form
 from engine.recipe_parser import items, recipes
 import pulp
 
+###############################################################################################
 # Will eventually be replaced by user input
-final_product_name = 'Desc_IronPlate_C'
+final_product_name = 'Desc_ModularFrameHeavy_C'
+###############################################################################################
+
 final_product = items[final_product_name]
 
 # Will eventually read a save file to determine what recipes are available
@@ -23,15 +25,10 @@ missing_products_count = 0
 
 target_item = final_product
 for consider_recipe in recipes.values():
-    # print(f'{consider_recipe.display_name}')
     if consider_recipe.products == []:
-        # print(f'{consider_recipe.display_name}\'s products are missing')
         missing_products_count+=1
     for search_product in consider_recipe.products.keys():
-        # if "Plate" in consider_recipe.display_name:
-            # print(f'{consider_recipe.display_name} has \"Plate\" in its name')
         if search_product == target_item.item_name:
-            # print(f'{consider_recipe.display_name} has been found to produce {target_item.item_name}! Adding to recipe set.')
             relevant_recipes.add(consider_recipe.recipe_name)
             for add_ingredient in consider_recipe.ingredients.keys():
                 if add_ingredient not in all_ingredients:
@@ -42,26 +39,15 @@ for consider_recipe in recipes.values():
 
 ingredient_iterator = 0
 while ingredient_iterator < len(all_ingredients):
-    target_item = items[all_ingredients[ingredient_iterator]]
-    # print(f'Finding how to produce {target_item.display_name}...')
-    # print(f'{ingredient_iterator}/{len(all_ingredients)}')
     for consider_recipe in recipes.values():
-        # print(f'{consider_recipe.display_name}')
         if consider_recipe.products == []:
-            # print(f'{consider_recipe.display_name}\'s products are missing')
             missing_products_count+=1
         for search_product in consider_recipe.products.keys():
-            # if "Plate" in consider_recipe.display_name:
-            #    # print(f'{consider_recipe.display_name} has \"Plate\" in its name')
-            #    # print(f'{search_product.item_name}')
             if search_product == target_item.item_name:
-                # print(f'{consider_recipe.display_name} has been found to produce {target_item.item_name}! Adding to recipe set.')
                 relevant_recipes.add(consider_recipe.recipe_name)
                 for add_ingredient in consider_recipe.ingredients.keys():
                     if add_ingredient not in all_ingredients:
                         all_ingredients.append(add_ingredient)
-                        # print(f'{consider_recipe.recipe_name} added {add_ingredient.item_object.item_name}')
-                        # print(len(all_ingredients))
                 for add_product in consider_recipe.products.keys():
                     if add_product not in all_products:
                         all_products.append(add_product)
@@ -71,13 +57,66 @@ relevant_items = list(set(all_ingredients).union(set(all_products)))
 raw_inputs = list(set(all_ingredients) - set(all_products))
 byproducts = list(set(all_products) - set(all_ingredients) - set(final_product_name))
 
+###############################################################################################
+# MANUAL RECIPE REMOVAL
+# TODO: REMOVE THIS
+# relevant_recipes.discard("Recipe_Alternate_IngotIron_C")
+###############################################################################################
+
 recipe_vars = {
-    recipe_name: LpVariable(recipe_name, lowBound=0)
+    recipe_name: pulp.LpVariable(recipe_name, lowBound=0)
     for recipe_name in relevant_recipes
 }
 
 def production_coefficient(item_name: str, recipe_name: str) -> float:
-    coeff = 0
-
-
+    coeff = (
+    recipes[recipe_name].products.get(item_name, 0)/recipes[recipe_name].recipe_time
+    - recipes[recipe_name].ingredients.get(item_name, 0)/recipes[recipe_name].recipe_time
+    )
     return coeff
+
+resource_availability = dict.fromkeys(relevant_items, 0)
+
+###############################################################################################
+# TODO: REPLACE WITH USER INPUT IN ITEMS PER MINUTE
+# resource_availability["Desc_OreIron_C"] = -480*6
+# resource_availability["Desc_Stone_C"] = -480*4
+# resource_availability["Desc_Water_C"] = -300*6
+# resource_availability["Desc_OreCopper_C"] = -480
+# resource_availability["Desc_GoldIngot_C"] = -480
+# resource_availability["Desc_Coal_C"] = -480*4
+###############################################################################################
+
+factory_model = pulp.LpProblem("Maximize target item production", pulp.LpMaximize)
+
+for item in relevant_items:
+    lhs = pulp.lpSum([production_coefficient(item_name=item, recipe_name=recipe) * recipe_vars[recipe] for recipe in relevant_recipes])
+    factory_model += pulp.LpConstraint(
+        e = lhs,
+        sense = pulp.LpConstraintGE,
+        name = item,
+        rhs = resource_availability[item]
+    )
+
+    is_not_sinkable = not items[item].can_be_discarded
+    is_fluid = items[item].form != Form.SOLID
+    is_not_burnable = items[item].energy_value == 0
+
+    if ((is_not_sinkable or is_fluid) and is_not_burnable):
+        factory_model += pulp.LpConstraint(
+            e = lhs,
+            sense = pulp.LpConstraintLE,
+            name = item + "_byproduct",
+            rhs = 0
+        )
+
+    if item == final_product_name:
+        factory_model += lhs
+
+factory_model.solve()
+print(pulp.LpStatus[factory_model.status])
+
+for recipe in relevant_recipes:
+    solution = recipe_vars[recipe].varValue
+    if solution != 0:
+        print(f'{recipes[recipe].display_name}: {solution}')

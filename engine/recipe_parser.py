@@ -132,7 +132,8 @@ for target_recipe in docs_unwrap["FGRecipe"].values():
             produced_in=production_buildings[
                 BuildableManufacturerName(buildings_list_parsed[0])
             ],
-            recipe_time=float(target_recipe["mManufactoringDuration"]),
+            recipe_time=float(target_recipe["mManufactoringDuration"])/60, # convert seconds to minutes
+
             variable_power=VariablePower(
                 constant=float(target_recipe["mVariablePowerConsumptionConstant"]),
                 factor=float(target_recipe["mVariablePowerConsumptionFactor"]),
