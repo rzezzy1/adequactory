@@ -27,31 +27,37 @@ target_item = final_product
 for consider_recipe in recipes.values():
     if consider_recipe.products == []:
         missing_products_count+=1
-    for search_product in consider_recipe.products.keys():
+    for search_product in consider_recipe.products:
         if search_product == target_item.item_name:
             relevant_recipes.add(consider_recipe.recipe_name)
-            for add_ingredient in consider_recipe.ingredients.keys():
+            for add_ingredient in consider_recipe.ingredients:
                 if add_ingredient not in all_ingredients:
                     all_ingredients.append(add_ingredient)
-            for add_product in consider_recipe.products.keys():
+            for add_product in consider_recipe.products:
                 if add_product not in all_products:
                     all_products.append(add_product)
 
 ingredient_iterator = 0
 while ingredient_iterator < len(all_ingredients):
+    target_item = items[all_ingredients[ingredient_iterator]]
+    print(f'Looking for recipes for {target_item}')
     for consider_recipe in recipes.values():
         if consider_recipe.products == []:
             missing_products_count+=1
-        for search_product in consider_recipe.products.keys():
+        for search_product in consider_recipe.products:
             if search_product == target_item.item_name:
+                print(f'{target_item.item_name} found in {consider_recipe.display_name}')
                 relevant_recipes.add(consider_recipe.recipe_name)
-                for add_ingredient in consider_recipe.ingredients.keys():
+                for add_ingredient in consider_recipe.ingredients:
                     if add_ingredient not in all_ingredients:
                         all_ingredients.append(add_ingredient)
-                for add_product in consider_recipe.products.keys():
+                for add_product in consider_recipe.products:
                     if add_product not in all_products:
                         all_products.append(add_product)
     ingredient_iterator+=1
+
+print(relevant_recipes)
+print(all_ingredients)
 
 relevant_items = list(set(all_ingredients).union(set(all_products)))
 raw_inputs = list(set(all_ingredients) - set(all_products))
@@ -60,7 +66,8 @@ byproducts = list(set(all_products) - set(all_ingredients) - set(final_product_n
 ###############################################################################################
 # MANUAL RECIPE REMOVAL
 # TODO: REMOVE THIS
-# relevant_recipes.discard("Recipe_Alternate_IngotIron_C")
+relevant_recipes.discard("Recipe_Alternate_IngotIron_C")
+relevant_recipes.discard("Recipe_Diamond_C")
 ###############################################################################################
 
 recipe_vars = {
@@ -79,12 +86,13 @@ resource_availability = dict.fromkeys(relevant_items, 0)
 
 ###############################################################################################
 # TODO: REPLACE WITH USER INPUT IN ITEMS PER MINUTE
-# resource_availability["Desc_OreIron_C"] = -480*6
-# resource_availability["Desc_Stone_C"] = -480*4
-# resource_availability["Desc_Water_C"] = -300*6
-# resource_availability["Desc_OreCopper_C"] = -480
-# resource_availability["Desc_GoldIngot_C"] = -480
-# resource_availability["Desc_Coal_C"] = -480*4
+# WHILE ENTERING MANUALLY, MULTIPLY LIQUIDS BY 1000
+resource_availability["Desc_OreIron_C"] = -480*6
+resource_availability["Desc_Stone_C"] = -480*4
+resource_availability["Desc_Water_C"] = -300*6*1000
+resource_availability["Desc_OreCopper_C"] = -480
+resource_availability["Desc_OreGold_C"] = -480
+resource_availability["Desc_Coal_C"] = -480*4
 ###############################################################################################
 
 factory_model = pulp.LpProblem("Maximize target item production", pulp.LpMaximize)
