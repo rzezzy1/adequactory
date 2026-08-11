@@ -1,6 +1,5 @@
 import json
 import re
-import sys
 
 from engine.data_store import items, production_buildings, recipes
 from engine.models import (
@@ -62,10 +61,10 @@ def find_item(item_name: str, expected_categories: list[str]) -> Item | None:
             )
 
     print(f"{item_name} not found in any of the expected categories")
-    for category in docs_unwrap:
-        if item_name in docs_unwrap[category]:
-            print(f"{item_name} found in {category}!")
-            item_data = docs_unwrap[category][item_name]
+    for category_name, category in docs_unwrap.items():
+        if item_name in category:
+            print(f"{item_name} found in {category_name}!")
+            item_data = category[item_name]
             return Item(
                 item_name=item_data["ClassName"],
                 display_name=item_data["mDisplayName"],

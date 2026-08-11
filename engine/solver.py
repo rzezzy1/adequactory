@@ -1,6 +1,7 @@
+import pulp
+
 from engine.models import Form
 from engine.recipe_parser import items, recipes
-import pulp
 
 ###############################################################################################
 # Will eventually be replaced by user input
