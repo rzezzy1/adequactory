@@ -63,7 +63,7 @@ def find_item(item_name: str, expected_categories: list[str]) -> Item | None:
     print(f"{item_name} not found in any of the expected categories")
     for category_name, category in docs_unwrap.items():
         if item_name in category:
-            print(f"{item_name} found in {category_name}!")
+            # print(f"{item_name} found in {category_name}!")
             item_data = category[item_name]
             return Item(
                 item_name=item_data["ClassName"],
