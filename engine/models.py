@@ -88,5 +88,5 @@ class Recipe:
 @dataclass
 class FactoryResult:
     status: str
-    output_fate: float
-    recipt_rates: dict[str, float]
+    output_rate: float | None
+    recipe_rates: dict[str, float|None] | None

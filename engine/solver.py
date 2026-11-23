@@ -1,6 +1,6 @@
 import pulp
 
-from engine.models import Form
+from engine.models import FactoryResult, Form
 from engine.recipe_parser import items, recipes
 
 ###############################################################################################
@@ -9,11 +9,11 @@ from engine.recipe_parser import items, recipes
 #     final_product_name = 'Desc_ModularFrameHeavy_C'
 ###############################################################################################
 
-def solve_factory(final_product_name: str, input_resources: dict[str, float]):
+def solve_factory(final_product_name: str, input_resources: dict[str, float]) -> FactoryResult:
     final_product = items[final_product_name]
 
     # Will eventually read a save file to determine what recipes are available
-    available_recipes = recipes
+    # available_recipes = recipes
 
     # Pre-loop:
     # # take target item,
@@ -63,8 +63,8 @@ def solve_factory(final_product_name: str, input_resources: dict[str, float]):
     print(all_ingredients)
 
     relevant_items = list(set(all_ingredients).union(set(all_products)))
-    raw_inputs = list(set(all_ingredients) - set(all_products))
-    byproducts = list(set(all_products) - set(all_ingredients) - set(final_product_name))
+    # raw_inputs = list(set(all_ingredients) - set(all_products))
+    # byproducts = list(set(all_products) - set(all_ingredients) - set(final_product_name))
 
     ###############################################################################################
     # MANUAL RECIPE REMOVAL
@@ -131,12 +131,29 @@ def solve_factory(final_product_name: str, input_resources: dict[str, float]):
             factory_model += lhs
 
     factory_model.solve()
-    print(pulp.LpStatus[factory_model.status])
+    # print(pulp.LpStatus[factory_model.status])
+
+    return_status = pulp.LpStatus[factory_model.status]
+    if return_status != "Optimal":
+        return FactoryResult(return_status, None, None)
+
+    return_recipe_rates: dict[str, float|None] | None = {}
 
     for recipe in relevant_recipes:
         solution = recipe_vars[recipe].varValue
-        if solution != 0:
+        return_recipe_rates[recipe] = solution
+        if solution is None:
+            raise ValueError("Found None recipe rate even though optimal solution was found")
+        elif solution > 10**-6:
             print(f'{recipes[recipe].display_name}: {solution}')
+
+
+    return_output_rate = pulp.value(factory_model.objective)
+    if not isinstance(return_output_rate, float):
+        raise TypeError("Found None product rate even though optimal solution was found")
+
+
+    return FactoryResult(status=return_status, output_rate=float(return_output_rate), recipe_rates=return_recipe_rates)
 
 if __name__ == "__main__":
     final_product_name_hard = 'Desc_ModularFrameHeavy_C'
