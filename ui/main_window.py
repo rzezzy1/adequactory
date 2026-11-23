@@ -2,8 +2,9 @@ import sys
 
 from PySide6 import QtCore, QtWidgets
 
-from engine.models import Item
+from engine.models import Item, Recipe
 from engine.recipe_parser import items
+from engine.solver import solve_factory
 
 
 class ResourceRow(QtWidgets.QWidget):
@@ -87,6 +88,31 @@ class ResourceList(QtWidgets.QWidget):
             resources[class_name] = quantity
         return resources
 
+class RecipeRow(QtWidgets.QWidget):
+    def __init__(self, game_recipe: Recipe, recipe_rate: float):
+        super().__init__()
+
+        self.main_layout = QtWidgets.QHBoxLayout(self)
+
+        self.recipe_name = QtWidgets.QLabel(game_recipe.display_name)
+        self.main_layout.addWidget(self.recipe_name)
+
+        self.recipe_rate_label = QtWidgets.QLabel(str(recipe_rate))
+        self.main_layout.addWidget(self.recipe_rate_label)
+
+        self.veto_recipe_button = QtWidgets.QPushButton("X")
+        self.main_layout.addWidget(self.veto_recipe_button)
+
+class RecipeList(QtWidgets.QWidget):
+    def __init__(self, recipes_dict: dict[str, Recipe]):
+        super().__init__()
+
+        self.game_recipes = recipes_dict
+
+        self.main_layout = QtWidgets.QVBoxLayout(self)
+
+
+
 class AdequactoryGui(QtWidgets.QWidget):
     def __init__(self, items_dict: dict[str, Item]):
         super().__init__()
@@ -130,7 +156,11 @@ class AdequactoryGui(QtWidgets.QWidget):
 
     @QtCore.Slot()
     def calculate(self):
-        print(self.resource_list.get_resources())
+        # print(self.resource_list.get_resources())
+        target_item = self.target_selector.currentData()
+        input_resources = self.resource_list.get_resources()
+        solver_results = solve_factory(target_item, input_resources)
+        print(type(solver_results))
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
