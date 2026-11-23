@@ -84,3 +84,9 @@ class Recipe:
     variable_power: VariablePower
     alternate: bool
     is_unlocked: bool = True
+
+@dataclass
+class FactoryResult:
+    status: str
+    output_fate: float
+    recipt_rates: dict[str, float]
