@@ -43,13 +43,13 @@ def solve_factory(final_product_name: str, input_resources: dict[str, float]) ->
     ingredient_iterator = 0
     while ingredient_iterator < len(all_ingredients):
         target_item = items[all_ingredients[ingredient_iterator]]
-        print(f'Looking for recipes for {target_item}')
+        # print(f'Looking for recipes for {target_item}')
         for consider_recipe in recipes.values():
             if consider_recipe.products == []:
                 missing_products_count+=1
             for search_product in consider_recipe.products:
                 if search_product == target_item.item_name:
-                    print(f'{target_item.item_name} found in {consider_recipe.display_name}')
+                    # print(f'{target_item.item_name} found in {consider_recipe.display_name}')
                     relevant_recipes.add(consider_recipe.recipe_name)
                     for add_ingredient in consider_recipe.ingredients:
                         if add_ingredient not in all_ingredients:
@@ -59,8 +59,8 @@ def solve_factory(final_product_name: str, input_resources: dict[str, float]) ->
                             all_products.append(add_product)
         ingredient_iterator+=1
 
-    print(relevant_recipes)
-    print(all_ingredients)
+    # print(relevant_recipes)
+    # print(all_ingredients)
 
     relevant_items = list(set(all_ingredients).union(set(all_products)))
     # raw_inputs = list(set(all_ingredients) - set(all_products))
@@ -137,15 +137,15 @@ def solve_factory(final_product_name: str, input_resources: dict[str, float]) ->
     if return_status != "Optimal":
         return FactoryResult(return_status, None, None)
 
-    return_recipe_rates: dict[str, float|None] | None = {}
+    return_recipe_rates: dict[str, float] | None = {}
 
     for recipe in relevant_recipes:
         solution = recipe_vars[recipe].varValue
-        return_recipe_rates[recipe] = solution
         if solution is None:
             raise ValueError("Found None recipe rate even though optimal solution was found")
         elif solution > 10**-6:
             print(f'{recipes[recipe].display_name}: {solution}')
+            return_recipe_rates[recipe] = solution
 
 
     return_output_rate = pulp.value(factory_model.objective)
