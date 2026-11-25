@@ -29,9 +29,11 @@ class ResourceRow(QtWidgets.QWidget):
         self.resource_quantity.setRange(0,1e6)
         self.resource_quantity.setSuffix("/min")
         self.resource_quantity.setDecimals(5)
+        self.resource_quantity.setFixedWidth(120)
         self.main_layout.addWidget(self.resource_quantity)
 
         self.remove_row_button = QtWidgets.QPushButton("-")
+        self.remove_row_button.setFixedWidth(25)
         self.main_layout.addWidget(self.remove_row_button)
         self.remove_row_button.clicked.connect(self.request_removal)
 
@@ -90,19 +92,32 @@ class ResourceList(QtWidgets.QWidget):
         return resources
 
 class RecipeRow(QtWidgets.QWidget):
-    def __init__(self, game_recipe: Recipe, recipe_rate: float):
+    def __init__(self, recipe_name: str, recipe_rate: float, game_recipes: dict[str, Recipe]):
         super().__init__()
 
         self.main_layout = QtWidgets.QHBoxLayout(self)
 
-        self.recipe_name = QtWidgets.QLabel(game_recipe.display_name)
-        self.main_layout.addWidget(self.recipe_name)
+        self.recipe_name_label = QtWidgets.QLabel(game_recipes[recipe_name].display_name)
+        self.recipe_name_label.setFixedWidth(250)
+        self.main_layout.addWidget(self.recipe_name_label)
 
         self.recipe_rate_label = QtWidgets.QLabel(str(recipe_rate))
+        self.recipe_rate_label.setFixedWidth(69)
         self.main_layout.addWidget(self.recipe_rate_label)
 
-        self.veto_recipe_button = QtWidgets.QPushButton("X")
+        self.veto_recipe_button = QtWidgets.QPushButton("✗")
+        self.veto_recipe_button.setFixedWidth(25)
         self.main_layout.addWidget(self.veto_recipe_button)
+        self.veto_recipe_button.clicked.connect(self.request_veto)
+
+        self.recipe_class_name = recipe_name
+
+
+    veto_requested = QtCore.Signal(str)
+
+    @QtCore.Slot()
+    def request_veto(self):
+        self.veto_requested.emit(self.recipe_class_name)
 
 class RecipeList(QtWidgets.QWidget):
     def __init__(self, recipes_dict: dict[str, Recipe]):
@@ -115,14 +130,16 @@ class RecipeList(QtWidgets.QWidget):
         self.status_label = QtWidgets.QLabel("Waiting for calculation")
         self.main_layout.addWidget(self.status_label)
 
+        self.output_rate_label = QtWidgets.QLabel("")
+        self.main_layout.addWidget(self.output_rate_label)
+
         self.rows: list[RecipeRow] = []
 
-    @QtCore.Slot()
     def show_results(self, factory_result:FactoryResult, recipes_dict: dict[str, Recipe]):
         for row in self.rows:
-            self.rows.remove(row)
             self.main_layout.removeWidget(row)
             row.deleteLater()
+        self.rows.clear()
 
         if factory_result.status != "Optimal":
             self.status_label.setText("Calculation failed")
@@ -131,19 +148,26 @@ class RecipeList(QtWidgets.QWidget):
                 raise TypeError("Calculation returned optimal but recipe_rates is None")
             else:
                 self.status_label.setText(factory_result.status)
+                self.output_rate_label.setText(f'Output rate: {factory_result.output_rate}')
+
             for recipe_name, recipe_rate in factory_result.recipe_rates.items():
                 self.add_row(recipe_name, recipe_rate, recipes_dict)
 
     def add_row(self, recipe_name: str, recipe_rate: float, recipes_dict: dict[str, Recipe]):
-        new_row = RecipeRow(recipes_dict[recipe_name], recipe_rate)
+        new_row = RecipeRow(recipe_name, recipe_rate, recipes_dict)
         self.rows.append(new_row)
         self.main_layout.addWidget(new_row)
+        new_row.veto_requested.connect(self.veto_requested)
+
+    veto_requested = QtCore.Signal(str)
 
 class VetoedRecipe(QtWidgets.QWidget):
     def __init__(self, recipes_dict: dict[str, Recipe], recipe_name: str):
         super().__init__()
 
         self.game_recipes = recipes_dict
+
+        self.recipe_class_name = recipe_name
 
         self.main_layout = QtWidgets.QHBoxLayout(self)
 
@@ -152,6 +176,13 @@ class VetoedRecipe(QtWidgets.QWidget):
 
         self.unveto_button = QtWidgets.QPushButton("✔")
         self.main_layout.addWidget(self.unveto_button)
+        self.unveto_button.clicked.connect(self.request_unveto)
+
+    unveto_requested = QtCore.Signal(QtWidgets.QWidget)
+
+    @QtCore.Slot(QtWidgets.QWidget)
+    def request_unveto(self):
+        self.unveto_requested.emit(self)
 
 class VetoList(QtWidgets.QWidget):
     def __init__(self, recipes_dict: dict[str, Recipe]):
@@ -161,14 +192,16 @@ class VetoList(QtWidgets.QWidget):
 
         self.main_layout = QtWidgets.QVBoxLayout(self)
 
-        self.section_title = QtWidgets.QLabel("Struck Recipes")
+        self.section_title = QtWidgets.QLabel("Excluded Recipes")
         self.main_layout.addWidget(self.section_title)
 
-        self.rows: list[Recipe] = []
+        self.rows: list[str] = []
 
 class AdequactoryGui(QtWidgets.QWidget):
     def __init__(self, items_dict: dict[str, Item]):
         super().__init__()
+
+        self.setWindowTitle("Adequactory: A Satisfactory Production Calculator")
 
         self.game_items = items_dict
 
@@ -198,6 +231,9 @@ class AdequactoryGui(QtWidgets.QWidget):
         self.resource_list = ResourceList(items_dict=self.game_items)
         self.column1_layout.addWidget(self.resource_list)
 
+        self.veto_list = VetoList(recipes)
+        self.column1_layout.addWidget(self.veto_list)
+
         self.column2 = QtWidgets.QGroupBox()
         self.column_layout.addWidget(self.column2)
         self.column2.setTitle("Results")
@@ -205,6 +241,7 @@ class AdequactoryGui(QtWidgets.QWidget):
 
         self.recipes_list = RecipeList(recipes)
         self.column2_layout.addWidget(self.recipes_list)
+        self.recipes_list.veto_requested.connect(self.veto_recipe)
 
         self.calculate_button = QtWidgets.QPushButton("Calculate")
         self.main_layout.addWidget(self.calculate_button)
@@ -215,15 +252,23 @@ class AdequactoryGui(QtWidgets.QWidget):
         # print(self.resource_list.get_resources())
         target_item = self.target_selector.currentData()
         input_resources = self.resource_list.get_resources()
-        solver_results = solve_factory(target_item, input_resources)
+        solver_results = solve_factory(target_item, input_resources, self.veto_list.rows)
         print("SOLVER FUNCTION OUTPUT BELOW")
         print(solver_results)
         self.recipes_list.show_results(solver_results, recipes)
 
+    @QtCore.Slot(str)
+    def veto_recipe(self, recipe_name: str):
+        new_veto = VetoedRecipe(recipes, recipe_name)
+        self.veto_list.rows.append(recipe_name)
+        self.veto_list.main_layout.addWidget(new_veto)
+        new_veto.unveto_requested.connect(self.unveto_recipe)
 
-    # @QtCore.Slot(str)
-    # def veto_recipe(self, recipe_name: str):
-
+    @QtCore.Slot(QtWidgets.QWidget)
+    def unveto_recipe(self, vetoed_recipe: VetoedRecipe):
+        self.veto_list.rows.remove(vetoed_recipe.recipe_class_name)
+        self.column1_layout.removeWidget(vetoed_recipe)
+        vetoed_recipe.deleteLater()
 
 
 if __name__ == "__main__":

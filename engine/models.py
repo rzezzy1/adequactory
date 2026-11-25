@@ -89,4 +89,4 @@ class Recipe:
 class FactoryResult:
     status: str
     output_rate: float | None
-    recipe_rates: dict[str, float|None] | None
+    recipe_rates: dict[str, float] | None
