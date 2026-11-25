@@ -9,7 +9,7 @@ from engine.recipe_parser import items, recipes
 #     final_product_name = 'Desc_ModularFrameHeavy_C'
 ###############################################################################################
 
-def solve_factory(final_product_name: str, input_resources: dict[str, float]) -> FactoryResult:
+def solve_factory(final_product_name: str, input_resources: dict[str, float], veto_list: list[str]) -> FactoryResult:
     final_product = items[final_product_name]
 
     # Will eventually read a save file to determine what recipes are available
@@ -69,9 +69,11 @@ def solve_factory(final_product_name: str, input_resources: dict[str, float]) ->
     ###############################################################################################
     # MANUAL RECIPE REMOVAL
     # TODO: REMOVE THIS
-    relevant_recipes.discard("Recipe_Alternate_IngotIron_C")
-    relevant_recipes.discard("Recipe_Diamond_C")
+    # relevant_recipes.discard("Recipe_Alternate_IngotIron_C")
+    # relevant_recipes.discard("Recipe_Diamond_C")
     ###############################################################################################
+    for recipe_name in veto_list:
+        relevant_recipes.discard(recipe_name)
 
     recipe_vars = {
         recipe_name: pulp.LpVariable(recipe_name, lowBound=0)
@@ -163,4 +165,5 @@ if __name__ == "__main__":
                             "Desc_OreCopper_C": 480.0,
                             "Desc_OreGold_C": 480.0,
                             "Desc_Coal_C": 480.0*4}
-    solve_factory(final_product_name_hard, input_resources_hard)
+    veto_list_hard = ["Recipe_Alternate_IngotIron_C", "Recipe_Diamond_C"]
+    solve_factory(final_product_name_hard, input_resources_hard, veto_list_hard)
