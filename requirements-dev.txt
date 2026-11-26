@@ -1,0 +1,13 @@
+altgraph==0.17.5
+packaging==26.4
+PuLP==3.3.2
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.10
+PySide6==6.12.0
+PySide6_Addons==6.12.0
+PySide6_Essentials==6.12.0
+PySide6_Pdf==6.12.0.140
+PySide6_WebEngine==6.12.0.140
+ruff==0.16.2
+setuptools==84.2.1
+shiboken6==6.12.0

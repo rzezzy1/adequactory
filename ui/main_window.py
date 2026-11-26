@@ -3,7 +3,6 @@ import sys
 from PySide6 import QtCore, QtWidgets
 
 from engine.models import FactoryResult, Item, Recipe
-from engine.recipe_parser import items, recipes
 from engine.solver import import_game_data, solve_factory
 
 
@@ -197,7 +196,7 @@ class VetoList(QtWidgets.QWidget):
         self.rows: list[str] = []
 
 class AdequactoryGui(QtWidgets.QWidget):
-    def __init__(self, items_dict: dict[str, Item]):
+    def __init__(self, items_dict: dict[str, Item], recipes_dict: dict[str, Recipe]):
         super().__init__()
 
         self.setWindowTitle("Adequactory: A Satisfactory Production Calculator")
@@ -230,7 +229,7 @@ class AdequactoryGui(QtWidgets.QWidget):
         self.resource_list = ResourceList(items_dict=self.game_items)
         self.column1_layout.addWidget(self.resource_list)
 
-        self.veto_list = VetoList(recipes)
+        self.veto_list = VetoList(recipes_dict)
         self.column1_layout.addWidget(self.veto_list)
 
         self.column2 = QtWidgets.QGroupBox()
@@ -238,7 +237,7 @@ class AdequactoryGui(QtWidgets.QWidget):
         self.column2.setTitle("Results")
         self.column2_layout = QtWidgets.QVBoxLayout(self.column2)
 
-        self.recipes_list = RecipeList(recipes)
+        self.recipes_list = RecipeList(recipes_dict)
         self.column2_layout.addWidget(self.recipes_list)
         self.recipes_list.veto_requested.connect(self.veto_recipe)
 
@@ -247,18 +246,18 @@ class AdequactoryGui(QtWidgets.QWidget):
         self.calculate_button.clicked.connect(self.calculate)
 
     @QtCore.Slot()
-    def calculate(self):
+    def calculate(self, recipes_dict: dict[str, Recipe]):
         # print(self.resource_list.get_resources())
         target_item = self.target_selector.currentData()
         input_resources = self.resource_list.get_resources()
         solver_results = solve_factory(target_item, input_resources, self.veto_list.rows)
         print("SOLVER FUNCTION OUTPUT BELOW")
         print(solver_results)
-        self.recipes_list.show_results(solver_results, recipes)
+        self.recipes_list.show_results(solver_results, recipes_dict)
 
     @QtCore.Slot(str)
-    def veto_recipe(self, recipe_name: str):
-        new_veto = VetoedRecipe(recipes, recipe_name)
+    def veto_recipe(self, recipe_name: str, recipes_dict: dict[str, Recipe]):
+        new_veto = VetoedRecipe(recipes_dict, recipe_name)
         self.veto_list.rows.append(recipe_name)
         self.veto_list.main_layout.addWidget(new_veto)
         new_veto.unveto_requested.connect(self.unveto_recipe)
@@ -270,13 +269,16 @@ class AdequactoryGui(QtWidgets.QWidget):
         vetoed_recipe.deleteLater()
 
 
-if __name__ == "__main__":
+def main():
     app = QtWidgets.QApplication([])
 
     items, recipes = import_game_data()
 
-    widget = AdequactoryGui(items)
+    widget = AdequactoryGui(items, recipes)
     # widget.resize(800,600)
     widget.show()
 
     sys.exit(app.exec())
+
+if __name__ == "__main__":
+    main()

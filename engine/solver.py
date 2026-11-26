@@ -26,12 +26,12 @@ def season_recipe_dict(recipe_dict: dict) -> dict:
     return pre_output
 
 def import_game_data() -> tuple[dict[str, Item], dict[str, Recipe]]:
-    items_path = "data/items.json"
-    recipes_path = "data/recipes.json"
+    items_path =Path(__file__).parent.parent /  "data/parsed/items.json"
+    recipes_path =Path(__file__).parent.parent /  "data/parsed/recipes.json"
 
     if not Path(items_path).is_file() or not Path(recipes_path).is_file():
         print("items and/or recipes json files not found. Generating.")
-        items, recipes = parse_game_data("data/raw/en-US.json")
+        items, recipes = parse_game_data(Path(__file__).parent.parent / "data/raw/en-US.json")
         return (items, recipes)
 
     print("Items and recipes json files found. Using those.")

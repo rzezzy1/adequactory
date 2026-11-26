@@ -1,4 +1,5 @@
 import json
+import pathlib
 import re
 from dataclasses import asdict, is_dataclass
 from enum import Enum
@@ -140,10 +141,10 @@ def parse_game_data(docs_path) -> tuple[dict[str, Item], dict[str, Recipe]]:
                 alternate="AlternateRecipes" in target_recipe["FullName"],
             )
 
-    with open(file='data/items.json', mode='w', encoding='utf-8') as items_file:
+    with open(file=pathlib.Path(__file__).parent.parent / 'data/parsed/items.json', mode='w', encoding='utf-8') as items_file:
         json.dump(items, items_file, ensure_ascii=False, default=serializablize, indent=4, sort_keys=True)
 
-    with open(file='data/recipes.json', mode='w', encoding='utf-8') as recipes_file:
+    with open(file=pathlib.Path(__file__).parent.parent / 'data/parsed/recipes.json', mode='w', encoding='utf-8') as recipes_file:
         json.dump(recipes, recipes_file, ensure_ascii=False, default=serializablize, indent=4, sort_keys=True)
 
     # with open(file='data/buildings.json', mode='w', encoding='utf-8') as buildings_file:
@@ -163,5 +164,5 @@ if __name__ == "__main__":
     # If building from source, point this filepath at
     # CommunityResources/Docs/en-us.JSON, or
     # move that file to the (gitignored) location indicated here.
-    docs_path_hard = "data/raw/en-US.json"
+    docs_path_hard = pathlib.Path(__file__).parent.parent / "data/raw/en-US.json"
     parse_game_data(docs_path=docs_path_hard)
