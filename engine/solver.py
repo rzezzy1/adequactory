@@ -1,7 +1,10 @@
+import json
+from pathlib import Path
+
 import pulp
 
-from engine.models import FactoryResult, Form
-from engine.recipe_parser import items, recipes
+from engine.models import FactoryResult, Form, Item, Recipe, StackSize, VariablePower
+from engine.recipe_parser import parse_game_data
 
 ###############################################################################################
 # Will eventually be replaced by user input
@@ -9,7 +12,56 @@ from engine.recipe_parser import items, recipes
 #     final_product_name = 'Desc_ModularFrameHeavy_C'
 ###############################################################################################
 
+
+
+def season_item_dict(item_dict: dict) -> dict:
+    pre_output: dict = item_dict.copy()
+    pre_output["form"] = Form(item_dict["form"])
+    pre_output["stack_size"] = StackSize(item_dict["stack_size"])
+    return pre_output
+
+def season_recipe_dict(recipe_dict: dict) -> dict:
+    pre_output: dict = recipe_dict.copy()
+    pre_output["variable_power"] = VariablePower(pre_output["variable_power"])
+    return pre_output
+
+def import_game_data() -> tuple[dict[str, Item], dict[str, Recipe]]:
+    items_path = "data/items.json"
+    recipes_path = "data/recipes.json"
+
+    if not Path(items_path).is_file() or not Path(recipes_path).is_file():
+        print("items and/or recipes json files not found. Generating.")
+        items, recipes = parse_game_data("data/raw/en-US.json")
+        return (items, recipes)
+
+    print("Items and recipes json files found. Using those.")
+    with open(file=items_path, mode='r', encoding='utf-8') as items_file:
+        items_raw = json.load(items_file)
+
+    with open(file=recipes_path, mode='r', encoding='utf-8') as recipes_file:
+        recipes_raw = json.load(recipes_file)
+
+    items_seasoned: dict[str, dict] = {}
+    items: dict[str, Item] = {}
+    recipes_seasoned: dict[str, dict] = {}
+    recipes: dict[str, Recipe] = {}
+
+    for key, value in items_raw.items():
+        items_seasoned[key] = season_item_dict(value)
+        items[key] = Item(**items_seasoned[key])
+
+    for key, value in recipes_raw.items():
+        recipes_seasoned[key] = season_recipe_dict(value)
+        recipes[key] = Recipe(**recipes_seasoned[key])
+
+    return (items, recipes)
+
 def solve_factory(final_product_name: str, input_resources: dict[str, float], veto_list: list[str]) -> FactoryResult:
+
+    items, recipes = import_game_data()
+
+    print(recipes["Recipe_AILimiter_C"])
+
     final_product = items[final_product_name]
 
     # Will eventually read a save file to determine what recipes are available

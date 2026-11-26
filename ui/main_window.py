@@ -2,10 +2,9 @@ import sys
 
 from PySide6 import QtCore, QtWidgets
 
-from engine.data_store import recipes
 from engine.models import FactoryResult, Item, Recipe
-from engine.recipe_parser import items
-from engine.solver import solve_factory
+from engine.recipe_parser import items, recipes
+from engine.solver import import_game_data, solve_factory
 
 
 class ResourceRow(QtWidgets.QWidget):
@@ -273,6 +272,8 @@ class AdequactoryGui(QtWidgets.QWidget):
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
+
+    items, recipes = import_game_data()
 
     widget = AdequactoryGui(items)
     # widget.resize(800,600)

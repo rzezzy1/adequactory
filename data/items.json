@@ -1,0 +1,1505 @@
+{
+    "Desc_AlienDNACapsule_C": {
+        "can_be_discarded": true,
+        "display_name": "Alien DNA Capsule",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_AlienDNACapsule_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_AlienPowerFuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Alien Power Matrix",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_AlienPowerFuel_C",
+        "resource_sink_points": 210,
+        "stack_size": 50
+    },
+    "Desc_AlienProtein_C": {
+        "can_be_discarded": true,
+        "display_name": "Alien Protein",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_AlienProtein_C",
+        "resource_sink_points": 0,
+        "stack_size": 100
+    },
+    "Desc_AluminaSolution_C": {
+        "can_be_discarded": true,
+        "display_name": "Alumina Solution",
+        "energy_value": 0.0,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_AluminaSolution_C",
+        "resource_sink_points": 20,
+        "stack_size": 50000
+    },
+    "Desc_AluminumCasing_C": {
+        "can_be_discarded": true,
+        "display_name": "Aluminum Casing",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_AluminumCasing_C",
+        "resource_sink_points": 393,
+        "stack_size": 200
+    },
+    "Desc_AluminumIngot_C": {
+        "can_be_discarded": true,
+        "display_name": "Aluminum Ingot",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_AluminumIngot_C",
+        "resource_sink_points": 131,
+        "stack_size": 100
+    },
+    "Desc_AluminumPlateReinforced_C": {
+        "can_be_discarded": true,
+        "display_name": "Heat Sink",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_AluminumPlateReinforced_C",
+        "resource_sink_points": 2804,
+        "stack_size": 100
+    },
+    "Desc_AluminumPlate_C": {
+        "can_be_discarded": true,
+        "display_name": "Alclad Aluminum Sheet",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_AluminumPlate_C",
+        "resource_sink_points": 266,
+        "stack_size": 200
+    },
+    "Desc_AluminumScrap_C": {
+        "can_be_discarded": true,
+        "display_name": "Aluminum Scrap",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_AluminumScrap_C",
+        "resource_sink_points": 27,
+        "stack_size": 500
+    },
+    "Desc_Battery_C": {
+        "can_be_discarded": true,
+        "display_name": "Battery",
+        "energy_value": 6000.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Battery_C",
+        "resource_sink_points": 465,
+        "stack_size": 200
+    },
+    "Desc_Biofuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Solid Biofuel",
+        "energy_value": 450.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Biofuel_C",
+        "resource_sink_points": 48,
+        "stack_size": 200
+    },
+    "Desc_Cable_C": {
+        "can_be_discarded": true,
+        "display_name": "Cable",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Cable_C",
+        "resource_sink_points": 24,
+        "stack_size": 200
+    },
+    "Desc_CandyCane_C": {
+        "can_be_discarded": true,
+        "display_name": "Candy Cane",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CandyCane_C",
+        "resource_sink_points": 6,
+        "stack_size": 100
+    },
+    "Desc_CartridgeChaos_C": {
+        "can_be_discarded": true,
+        "display_name": "Turbo Rifle Ammo",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CartridgeChaos_C",
+        "resource_sink_points": 120,
+        "stack_size": 500
+    },
+    "Desc_CartridgeSmartProjectile_C": {
+        "can_be_discarded": true,
+        "display_name": "Homing Rifle Ammo",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CartridgeSmartProjectile_C",
+        "resource_sink_points": 855,
+        "stack_size": 500
+    },
+    "Desc_CartridgeStandard_C": {
+        "can_be_discarded": true,
+        "display_name": "Rifle Ammo",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CartridgeStandard_C",
+        "resource_sink_points": 25,
+        "stack_size": 500
+    },
+    "Desc_Cement_C": {
+        "can_be_discarded": true,
+        "display_name": "Concrete",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Cement_C",
+        "resource_sink_points": 12,
+        "stack_size": 500
+    },
+    "Desc_CircuitBoardHighSpeed_C": {
+        "can_be_discarded": true,
+        "display_name": "AI Limiter",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CircuitBoardHighSpeed_C",
+        "resource_sink_points": 920,
+        "stack_size": 100
+    },
+    "Desc_CircuitBoard_C": {
+        "can_be_discarded": true,
+        "display_name": "Circuit Board",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CircuitBoard_C",
+        "resource_sink_points": 696,
+        "stack_size": 200
+    },
+    "Desc_Coal_C": {
+        "can_be_discarded": true,
+        "display_name": "Coal",
+        "energy_value": 300.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Coal_C",
+        "resource_sink_points": 3,
+        "stack_size": 100
+    },
+    "Desc_CompactedCoal_C": {
+        "can_be_discarded": true,
+        "display_name": "Compacted Coal",
+        "energy_value": 630.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CompactedCoal_C",
+        "resource_sink_points": 28,
+        "stack_size": 100
+    },
+    "Desc_ComputerSuper_C": {
+        "can_be_discarded": true,
+        "display_name": "Supercomputer",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_ComputerSuper_C",
+        "resource_sink_points": 97352,
+        "stack_size": 50
+    },
+    "Desc_Computer_C": {
+        "can_be_discarded": true,
+        "display_name": "Computer",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Computer_C",
+        "resource_sink_points": 8352,
+        "stack_size": 50
+    },
+    "Desc_CoolingSystem_C": {
+        "can_be_discarded": true,
+        "display_name": "Cooling System",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CoolingSystem_C",
+        "resource_sink_points": 12006,
+        "stack_size": 100
+    },
+    "Desc_CopperDust_C": {
+        "can_be_discarded": true,
+        "display_name": "Copper Powder",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CopperDust_C",
+        "resource_sink_points": 72,
+        "stack_size": 500
+    },
+    "Desc_CopperIngot_C": {
+        "can_be_discarded": true,
+        "display_name": "Copper Ingot",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CopperIngot_C",
+        "resource_sink_points": 6,
+        "stack_size": 100
+    },
+    "Desc_CopperSheet_C": {
+        "can_be_discarded": true,
+        "display_name": "Copper Sheet",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CopperSheet_C",
+        "resource_sink_points": 24,
+        "stack_size": 200
+    },
+    "Desc_CrystalOscillator_C": {
+        "can_be_discarded": true,
+        "display_name": "Crystal Oscillator",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CrystalOscillator_C",
+        "resource_sink_points": 3072,
+        "stack_size": 100
+    },
+    "Desc_CrystalShard_C": {
+        "can_be_discarded": false,
+        "display_name": "Power Shard",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_CrystalShard_C",
+        "resource_sink_points": 0,
+        "stack_size": 100
+    },
+    "Desc_Crystal_C": {
+        "can_be_discarded": false,
+        "display_name": "Blue Power Slug",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Crystal_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_Crystal_mk2_C": {
+        "can_be_discarded": false,
+        "display_name": "Yellow Power Slug",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Crystal_mk2_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_Crystal_mk3_C": {
+        "can_be_discarded": false,
+        "display_name": "Purple Power Slug",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Crystal_mk3_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_DarkEnergy_C": {
+        "can_be_discarded": true,
+        "display_name": "Dark Matter Residue",
+        "energy_value": 0.0,
+        "form": "RF_GAS",
+        "item_name": "Desc_DarkEnergy_C",
+        "resource_sink_points": 130,
+        "stack_size": 50000
+    },
+    "Desc_DarkMatter_C": {
+        "can_be_discarded": true,
+        "display_name": "Dark Matter Crystal",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_DarkMatter_C",
+        "resource_sink_points": 1780,
+        "stack_size": 200
+    },
+    "Desc_Diamond_C": {
+        "can_be_discarded": true,
+        "display_name": "Diamonds",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Diamond_C",
+        "resource_sink_points": 240,
+        "stack_size": 200
+    },
+    "Desc_DissolvedSilica_C": {
+        "can_be_discarded": true,
+        "display_name": "Dissolved Silica",
+        "energy_value": 0.0,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_DissolvedSilica_C",
+        "resource_sink_points": 0,
+        "stack_size": 50000
+    },
+    "Desc_ElectromagneticControlRod_C": {
+        "can_be_discarded": true,
+        "display_name": "Electromagnetic Control Rod",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_ElectromagneticControlRod_C",
+        "resource_sink_points": 2560,
+        "stack_size": 100
+    },
+    "Desc_Fabric_C": {
+        "can_be_discarded": true,
+        "display_name": "Fabric",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Fabric_C",
+        "resource_sink_points": 140,
+        "stack_size": 100
+    },
+    "Desc_FicsiteIngot_C": {
+        "can_be_discarded": true,
+        "display_name": "Ficsite Ingot",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_FicsiteIngot_C",
+        "resource_sink_points": 1936,
+        "stack_size": 100
+    },
+    "Desc_FicsiteMesh_C": {
+        "can_be_discarded": true,
+        "display_name": "Ficsite Trigon",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_FicsiteMesh_C",
+        "resource_sink_points": 1291,
+        "stack_size": 200
+    },
+    "Desc_FicsoniumFuelRod_C": {
+        "can_be_discarded": true,
+        "display_name": "Ficsonium Fuel Rod",
+        "energy_value": 150000.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_FicsoniumFuelRod_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_Ficsonium_C": {
+        "can_be_discarded": true,
+        "display_name": "Ficsonium",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Ficsonium_C",
+        "resource_sink_points": 0,
+        "stack_size": 100
+    },
+    "Desc_Filter_C": {
+        "can_be_discarded": true,
+        "display_name": "Gas Filter",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Filter_C",
+        "resource_sink_points": 608,
+        "stack_size": 50
+    },
+    "Desc_Fireworks_Projectile_01_C": {
+        "can_be_discarded": true,
+        "display_name": "Sweet Fireworks",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Fireworks_Projectile_01_C",
+        "resource_sink_points": 60,
+        "stack_size": 100
+    },
+    "Desc_Fireworks_Projectile_02_C": {
+        "can_be_discarded": true,
+        "display_name": "Fancy Fireworks",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Fireworks_Projectile_02_C",
+        "resource_sink_points": 40,
+        "stack_size": 100
+    },
+    "Desc_Fireworks_Projectile_03_C": {
+        "can_be_discarded": true,
+        "display_name": "Sparkly Fireworks",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Fireworks_Projectile_03_C",
+        "resource_sink_points": 32,
+        "stack_size": 100
+    },
+    "Desc_FluidCanister_C": {
+        "can_be_discarded": true,
+        "display_name": "Empty Canister",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_FluidCanister_C",
+        "resource_sink_points": 60,
+        "stack_size": 100
+    },
+    "Desc_Fuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Fuel",
+        "energy_value": 750.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Fuel_C",
+        "resource_sink_points": 270,
+        "stack_size": 100
+    },
+    "Desc_GasTank_C": {
+        "can_be_discarded": true,
+        "display_name": "Empty Fluid Tank",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_GasTank_C",
+        "resource_sink_points": 170,
+        "stack_size": 100
+    },
+    "Desc_GenericBiomass_C": {
+        "can_be_discarded": true,
+        "display_name": "Biomass",
+        "energy_value": 180.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_GenericBiomass_C",
+        "resource_sink_points": 12,
+        "stack_size": 200
+    },
+    "Desc_Gift_C": {
+        "can_be_discarded": true,
+        "display_name": "FICSMAS Gift",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Gift_C",
+        "resource_sink_points": 1,
+        "stack_size": 200
+    },
+    "Desc_GoldIngot_C": {
+        "can_be_discarded": true,
+        "display_name": "Caterium Ingot",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_GoldIngot_C",
+        "resource_sink_points": 42,
+        "stack_size": 100
+    },
+    "Desc_GunpowderMK2_C": {
+        "can_be_discarded": true,
+        "display_name": "Smokeless Powder",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_GunpowderMK2_C",
+        "resource_sink_points": 58,
+        "stack_size": 100
+    },
+    "Desc_Gunpowder_C": {
+        "can_be_discarded": true,
+        "display_name": "Black Powder",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Gunpowder_C",
+        "resource_sink_points": 14,
+        "stack_size": 200
+    },
+    "Desc_HatcherParts_C": {
+        "can_be_discarded": true,
+        "display_name": "Hatcher Remains",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_HatcherParts_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_HazmatFilter_C": {
+        "can_be_discarded": true,
+        "display_name": "Iodine-Infused Filter",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_HazmatFilter_C",
+        "resource_sink_points": 2274,
+        "stack_size": 50
+    },
+    "Desc_HeavyOilResidue_C": {
+        "can_be_discarded": true,
+        "display_name": "Heavy Oil Residue",
+        "energy_value": 0.4,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_HeavyOilResidue_C",
+        "resource_sink_points": 30,
+        "stack_size": 50000
+    },
+    "Desc_HighSpeedConnector_C": {
+        "can_be_discarded": true,
+        "display_name": "High-Speed Connector",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_HighSpeedConnector_C",
+        "resource_sink_points": 3776,
+        "stack_size": 100
+    },
+    "Desc_HighSpeedWire_C": {
+        "can_be_discarded": true,
+        "display_name": "Quickwire",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_HighSpeedWire_C",
+        "resource_sink_points": 17,
+        "stack_size": 500
+    },
+    "Desc_HogParts_C": {
+        "can_be_discarded": true,
+        "display_name": "Hog Remains",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_HogParts_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_IonizedFuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Ionized Fuel",
+        "energy_value": 5.0,
+        "form": "RF_GAS",
+        "item_name": "Desc_IonizedFuel_C",
+        "resource_sink_points": 2398,
+        "stack_size": 50000
+    },
+    "Desc_IronIngot_C": {
+        "can_be_discarded": true,
+        "display_name": "Iron Ingot",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_IronIngot_C",
+        "resource_sink_points": 2,
+        "stack_size": 100
+    },
+    "Desc_IronPlateReinforced_C": {
+        "can_be_discarded": true,
+        "display_name": "Reinforced Iron Plate",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_IronPlateReinforced_C",
+        "resource_sink_points": 120,
+        "stack_size": 100
+    },
+    "Desc_IronPlate_C": {
+        "can_be_discarded": true,
+        "display_name": "Iron Plate",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_IronPlate_C",
+        "resource_sink_points": 6,
+        "stack_size": 200
+    },
+    "Desc_IronRod_C": {
+        "can_be_discarded": true,
+        "display_name": "Iron Rod",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_IronRod_C",
+        "resource_sink_points": 4,
+        "stack_size": 200
+    },
+    "Desc_IronScrew_C": {
+        "can_be_discarded": true,
+        "display_name": "Screws",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_IronScrew_C",
+        "resource_sink_points": 2,
+        "stack_size": 500
+    },
+    "Desc_Leaves_C": {
+        "can_be_discarded": true,
+        "display_name": "Leaves",
+        "energy_value": 15.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Leaves_C",
+        "resource_sink_points": 3,
+        "stack_size": 500
+    },
+    "Desc_LiquidBiofuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Liquid Biofuel",
+        "energy_value": 0.75,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_LiquidBiofuel_C",
+        "resource_sink_points": 261,
+        "stack_size": 50000
+    },
+    "Desc_LiquidFuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Fuel",
+        "energy_value": 0.75,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_LiquidFuel_C",
+        "resource_sink_points": 75,
+        "stack_size": 50000
+    },
+    "Desc_LiquidOil_C": {
+        "can_be_discarded": true,
+        "display_name": "Crude Oil",
+        "energy_value": 0.32,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_LiquidOil_C",
+        "resource_sink_points": 30,
+        "stack_size": 50000
+    },
+    "Desc_LiquidTurboFuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Turbofuel",
+        "energy_value": 2.0,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_LiquidTurboFuel_C",
+        "resource_sink_points": 225,
+        "stack_size": 50000
+    },
+    "Desc_ModularFrameFused_C": {
+        "can_be_discarded": true,
+        "display_name": "Fused Modular Frame",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_ModularFrameFused_C",
+        "resource_sink_points": 62840,
+        "stack_size": 50
+    },
+    "Desc_ModularFrameHeavy_C": {
+        "can_be_discarded": true,
+        "display_name": "Heavy Modular Frame",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_ModularFrameHeavy_C",
+        "resource_sink_points": 10800,
+        "stack_size": 50
+    },
+    "Desc_ModularFrameLightweight_C": {
+        "can_be_discarded": true,
+        "display_name": "Radio Control Unit",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_ModularFrameLightweight_C",
+        "resource_sink_points": 32352,
+        "stack_size": 50
+    },
+    "Desc_ModularFrame_C": {
+        "can_be_discarded": true,
+        "display_name": "Modular Frame",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_ModularFrame_C",
+        "resource_sink_points": 408,
+        "stack_size": 50
+    },
+    "Desc_MotorLightweight_C": {
+        "can_be_discarded": true,
+        "display_name": "Turbo Motor",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_MotorLightweight_C",
+        "resource_sink_points": 240496,
+        "stack_size": 50
+    },
+    "Desc_Motor_C": {
+        "can_be_discarded": true,
+        "display_name": "Motor",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Motor_C",
+        "resource_sink_points": 1520,
+        "stack_size": 50
+    },
+    "Desc_Mycelia_C": {
+        "can_be_discarded": true,
+        "display_name": "Mycelia",
+        "energy_value": 20.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Mycelia_C",
+        "resource_sink_points": 10,
+        "stack_size": 200
+    },
+    "Desc_NitricAcid_C": {
+        "can_be_discarded": true,
+        "display_name": "Nitric Acid",
+        "energy_value": 0.0,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_NitricAcid_C",
+        "resource_sink_points": 94,
+        "stack_size": 50000
+    },
+    "Desc_NitrogenGas_C": {
+        "can_be_discarded": true,
+        "display_name": "Nitrogen Gas",
+        "energy_value": 0.0,
+        "form": "RF_GAS",
+        "item_name": "Desc_NitrogenGas_C",
+        "resource_sink_points": 10,
+        "stack_size": 50000
+    },
+    "Desc_NobeliskCluster_C": {
+        "can_be_discarded": true,
+        "display_name": "Cluster Nobelisk",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_NobeliskCluster_C",
+        "resource_sink_points": 1376,
+        "stack_size": 50
+    },
+    "Desc_NobeliskExplosive_C": {
+        "can_be_discarded": true,
+        "display_name": "Nobelisk",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_NobeliskExplosive_C",
+        "resource_sink_points": 152,
+        "stack_size": 50
+    },
+    "Desc_NobeliskGas_C": {
+        "can_be_discarded": true,
+        "display_name": "Gas Nobelisk",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_NobeliskGas_C",
+        "resource_sink_points": 544,
+        "stack_size": 50
+    },
+    "Desc_NobeliskNuke_C": {
+        "can_be_discarded": true,
+        "display_name": "Nuke Nobelisk",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_NobeliskNuke_C",
+        "resource_sink_points": 19600,
+        "stack_size": 50
+    },
+    "Desc_NobeliskShockwave_C": {
+        "can_be_discarded": true,
+        "display_name": "Pulse Nobelisk",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_NobeliskShockwave_C",
+        "resource_sink_points": 1533,
+        "stack_size": 50
+    },
+    "Desc_NonFissibleUranium_C": {
+        "can_be_discarded": false,
+        "display_name": "Non-Fissile Uranium",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_NonFissibleUranium_C",
+        "resource_sink_points": 0,
+        "stack_size": 500
+    },
+    "Desc_NuclearFuelRod_C": {
+        "can_be_discarded": true,
+        "display_name": "Uranium Fuel Rod",
+        "energy_value": 750000.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_NuclearFuelRod_C",
+        "resource_sink_points": 43468,
+        "stack_size": 50
+    },
+    "Desc_NuclearWaste_C": {
+        "can_be_discarded": false,
+        "display_name": "Uranium Waste",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_NuclearWaste_C",
+        "resource_sink_points": 0,
+        "stack_size": 500
+    },
+    "Desc_OreBauxite_C": {
+        "can_be_discarded": true,
+        "display_name": "Bauxite",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_OreBauxite_C",
+        "resource_sink_points": 8,
+        "stack_size": 100
+    },
+    "Desc_OreCopper_C": {
+        "can_be_discarded": true,
+        "display_name": "Copper Ore",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_OreCopper_C",
+        "resource_sink_points": 3,
+        "stack_size": 100
+    },
+    "Desc_OreGold_C": {
+        "can_be_discarded": true,
+        "display_name": "Caterium Ore",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_OreGold_C",
+        "resource_sink_points": 7,
+        "stack_size": 100
+    },
+    "Desc_OreIron_C": {
+        "can_be_discarded": true,
+        "display_name": "Iron Ore",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_OreIron_C",
+        "resource_sink_points": 1,
+        "stack_size": 100
+    },
+    "Desc_OreUranium_C": {
+        "can_be_discarded": true,
+        "display_name": "Uranium",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_OreUranium_C",
+        "resource_sink_points": 35,
+        "stack_size": 100
+    },
+    "Desc_PackagedAlumina_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Alumina Solution",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedAlumina_C",
+        "resource_sink_points": 160,
+        "stack_size": 100
+    },
+    "Desc_PackagedBiofuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Liquid Biofuel",
+        "energy_value": 750.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedBiofuel_C",
+        "resource_sink_points": 370,
+        "stack_size": 100
+    },
+    "Desc_PackagedIonizedFuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Ionized Fuel",
+        "energy_value": 10000.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedIonizedFuel_C",
+        "resource_sink_points": 5246,
+        "stack_size": 100
+    },
+    "Desc_PackagedNitricAcid_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Nitric Acid",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedNitricAcid_C",
+        "resource_sink_points": 412,
+        "stack_size": 100
+    },
+    "Desc_PackagedNitrogenGas_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Nitrogen Gas",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedNitrogenGas_C",
+        "resource_sink_points": 312,
+        "stack_size": 100
+    },
+    "Desc_PackagedOilResidue_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Heavy Oil Residue",
+        "energy_value": 400.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedOilResidue_C",
+        "resource_sink_points": 180,
+        "stack_size": 100
+    },
+    "Desc_PackagedOil_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Oil",
+        "energy_value": 320.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedOil_C",
+        "resource_sink_points": 180,
+        "stack_size": 100
+    },
+    "Desc_PackagedRocketFuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Rocket Fuel",
+        "energy_value": 7200.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedRocketFuel_C",
+        "resource_sink_points": 1028,
+        "stack_size": 100
+    },
+    "Desc_PackagedSulfuricAcid_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Sulfuric Acid",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedSulfuricAcid_C",
+        "resource_sink_points": 152,
+        "stack_size": 100
+    },
+    "Desc_PackagedWater_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Water",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PackagedWater_C",
+        "resource_sink_points": 130,
+        "stack_size": 100
+    },
+    "Desc_PetroleumCoke_C": {
+        "can_be_discarded": true,
+        "display_name": "Petroleum Coke",
+        "energy_value": 180.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PetroleumCoke_C",
+        "resource_sink_points": 20,
+        "stack_size": 200
+    },
+    "Desc_Plastic_C": {
+        "can_be_discarded": true,
+        "display_name": "Plastic",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Plastic_C",
+        "resource_sink_points": 75,
+        "stack_size": 200
+    },
+    "Desc_PlutoniumCell_C": {
+        "can_be_discarded": false,
+        "display_name": "Encased Plutonium Cell",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PlutoniumCell_C",
+        "resource_sink_points": 0,
+        "stack_size": 200
+    },
+    "Desc_PlutoniumFuelRod_C": {
+        "can_be_discarded": true,
+        "display_name": "Plutonium Fuel Rod",
+        "energy_value": 1500000.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PlutoniumFuelRod_C",
+        "resource_sink_points": 153184,
+        "stack_size": 50
+    },
+    "Desc_PlutoniumPellet_C": {
+        "can_be_discarded": false,
+        "display_name": "Plutonium Pellet",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PlutoniumPellet_C",
+        "resource_sink_points": 0,
+        "stack_size": 100
+    },
+    "Desc_PlutoniumWaste_C": {
+        "can_be_discarded": false,
+        "display_name": "Plutonium Waste",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PlutoniumWaste_C",
+        "resource_sink_points": 0,
+        "stack_size": 500
+    },
+    "Desc_PolymerResin_C": {
+        "can_be_discarded": true,
+        "display_name": "Polymer Resin",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PolymerResin_C",
+        "resource_sink_points": 12,
+        "stack_size": 200
+    },
+    "Desc_PressureConversionCube_C": {
+        "can_be_discarded": true,
+        "display_name": "Pressure Conversion Cube",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_PressureConversionCube_C",
+        "resource_sink_points": 255088,
+        "stack_size": 50
+    },
+    "Desc_QuantumEnergy_C": {
+        "can_be_discarded": true,
+        "display_name": "Excited Photonic Matter",
+        "energy_value": 0.0,
+        "form": "RF_GAS",
+        "item_name": "Desc_QuantumEnergy_C",
+        "resource_sink_points": 100,
+        "stack_size": 50000
+    },
+    "Desc_QuantumOscillator_C": {
+        "can_be_discarded": true,
+        "display_name": "Superposition Oscillator",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_QuantumOscillator_C",
+        "resource_sink_points": 37292,
+        "stack_size": 100
+    },
+    "Desc_QuartzCrystal_C": {
+        "can_be_discarded": true,
+        "display_name": "Quartz Crystal",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_QuartzCrystal_C",
+        "resource_sink_points": 50,
+        "stack_size": 200
+    },
+    "Desc_RawQuartz_C": {
+        "can_be_discarded": true,
+        "display_name": "Raw Quartz",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_RawQuartz_C",
+        "resource_sink_points": 15,
+        "stack_size": 100
+    },
+    "Desc_Rebar_Explosive_C": {
+        "can_be_discarded": true,
+        "display_name": "Explosive Rebar",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Rebar_Explosive_C",
+        "resource_sink_points": 360,
+        "stack_size": 100
+    },
+    "Desc_Rebar_Spreadshot_C": {
+        "can_be_discarded": true,
+        "display_name": "Shatter Rebar",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Rebar_Spreadshot_C",
+        "resource_sink_points": 332,
+        "stack_size": 100
+    },
+    "Desc_Rebar_Stunshot_C": {
+        "can_be_discarded": true,
+        "display_name": "Stun Rebar",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Rebar_Stunshot_C",
+        "resource_sink_points": 186,
+        "stack_size": 100
+    },
+    "Desc_RocketFuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Rocket Fuel",
+        "energy_value": 3.6,
+        "form": "RF_GAS",
+        "item_name": "Desc_RocketFuel_C",
+        "resource_sink_points": 289,
+        "stack_size": 50000
+    },
+    "Desc_Rotor_C": {
+        "can_be_discarded": true,
+        "display_name": "Rotor",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Rotor_C",
+        "resource_sink_points": 140,
+        "stack_size": 100
+    },
+    "Desc_Rubber_C": {
+        "can_be_discarded": true,
+        "display_name": "Rubber",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Rubber_C",
+        "resource_sink_points": 60,
+        "stack_size": 200
+    },
+    "Desc_SAMFluctuator_C": {
+        "can_be_discarded": true,
+        "display_name": "SAM Fluctuator",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SAMFluctuator_C",
+        "resource_sink_points": 1968,
+        "stack_size": 100
+    },
+    "Desc_SAMIngot_C": {
+        "can_be_discarded": true,
+        "display_name": "Reanimated SAM",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SAMIngot_C",
+        "resource_sink_points": 160,
+        "stack_size": 100
+    },
+    "Desc_SAM_C": {
+        "can_be_discarded": true,
+        "display_name": "SAM",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SAM_C",
+        "resource_sink_points": 20,
+        "stack_size": 100
+    },
+    "Desc_Silica_C": {
+        "can_be_discarded": true,
+        "display_name": "Silica",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Silica_C",
+        "resource_sink_points": 20,
+        "stack_size": 200
+    },
+    "Desc_SingularityCell_C": {
+        "can_be_discarded": true,
+        "display_name": "Singularity Cell",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SingularityCell_C",
+        "resource_sink_points": 114675,
+        "stack_size": 50
+    },
+    "Desc_Snow_C": {
+        "can_be_discarded": true,
+        "display_name": "FICSMAS Actual Snow",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Snow_C",
+        "resource_sink_points": 5,
+        "stack_size": 500
+    },
+    "Desc_SnowballProjectile_C": {
+        "can_be_discarded": true,
+        "display_name": "Snowball",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SnowballProjectile_C",
+        "resource_sink_points": 30,
+        "stack_size": 100
+    },
+    "Desc_SpaceElevatorPart_10_C": {
+        "can_be_discarded": true,
+        "display_name": "Biochemical Sculptor",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_10_C",
+        "resource_sink_points": 301778,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_11_C": {
+        "can_be_discarded": true,
+        "display_name": "Ballistic Warp Drive",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_11_C",
+        "resource_sink_points": 2895334,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_12_C": {
+        "can_be_discarded": true,
+        "display_name": "AI Expansion Server",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_12_C",
+        "resource_sink_points": 597652,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_1_C": {
+        "can_be_discarded": true,
+        "display_name": "Smart Plating",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_1_C",
+        "resource_sink_points": 520,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_2_C": {
+        "can_be_discarded": true,
+        "display_name": "Versatile Framework",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_2_C",
+        "resource_sink_points": 1176,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_3_C": {
+        "can_be_discarded": true,
+        "display_name": "Automated Wiring",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_3_C",
+        "resource_sink_points": 1440,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_4_C": {
+        "can_be_discarded": true,
+        "display_name": "Modular Engine",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_4_C",
+        "resource_sink_points": 9960,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_5_C": {
+        "can_be_discarded": true,
+        "display_name": "Adaptive Control Unit",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_5_C",
+        "resource_sink_points": 76368,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_6_C": {
+        "can_be_discarded": true,
+        "display_name": "Magnetic Field Generator",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_6_C",
+        "resource_sink_points": 11000,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_7_C": {
+        "can_be_discarded": true,
+        "display_name": "Assembly Director System",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_7_C",
+        "resource_sink_points": 500176,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_8_C": {
+        "can_be_discarded": true,
+        "display_name": "Thermal Propulsion Rocket",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_8_C",
+        "resource_sink_points": 728508,
+        "stack_size": 50
+    },
+    "Desc_SpaceElevatorPart_9_C": {
+        "can_be_discarded": true,
+        "display_name": "Nuclear Pasta",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpaceElevatorPart_9_C",
+        "resource_sink_points": 538976,
+        "stack_size": 50
+    },
+    "Desc_SpikedRebar_C": {
+        "can_be_discarded": true,
+        "display_name": "Iron Rebar",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpikedRebar_C",
+        "resource_sink_points": 8,
+        "stack_size": 100
+    },
+    "Desc_SpitterParts_C": {
+        "can_be_discarded": true,
+        "display_name": "Spitter Remains",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SpitterParts_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_Stator_C": {
+        "can_be_discarded": true,
+        "display_name": "Stator",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Stator_C",
+        "resource_sink_points": 240,
+        "stack_size": 100
+    },
+    "Desc_SteelIngot_C": {
+        "can_be_discarded": true,
+        "display_name": "Steel Ingot",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SteelIngot_C",
+        "resource_sink_points": 8,
+        "stack_size": 100
+    },
+    "Desc_SteelPipe_C": {
+        "can_be_discarded": true,
+        "display_name": "Steel Pipe",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SteelPipe_C",
+        "resource_sink_points": 24,
+        "stack_size": 200
+    },
+    "Desc_SteelPlateReinforced_C": {
+        "can_be_discarded": true,
+        "display_name": "Encased Industrial Beam",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SteelPlateReinforced_C",
+        "resource_sink_points": 528,
+        "stack_size": 100
+    },
+    "Desc_SteelPlate_C": {
+        "can_be_discarded": true,
+        "display_name": "Steel Beam",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_SteelPlate_C",
+        "resource_sink_points": 64,
+        "stack_size": 200
+    },
+    "Desc_StingerParts_C": {
+        "can_be_discarded": true,
+        "display_name": "Stinger Remains",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_StingerParts_C",
+        "resource_sink_points": 0,
+        "stack_size": 50
+    },
+    "Desc_Stone_C": {
+        "can_be_discarded": true,
+        "display_name": "Limestone",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Stone_C",
+        "resource_sink_points": 2,
+        "stack_size": 100
+    },
+    "Desc_Sulfur_C": {
+        "can_be_discarded": true,
+        "display_name": "Sulfur",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Sulfur_C",
+        "resource_sink_points": 11,
+        "stack_size": 100
+    },
+    "Desc_SulfuricAcid_C": {
+        "can_be_discarded": true,
+        "display_name": "Sulfuric Acid",
+        "energy_value": 0.0,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_SulfuricAcid_C",
+        "resource_sink_points": 16,
+        "stack_size": 50000
+    },
+    "Desc_TemporalProcessor_C": {
+        "can_be_discarded": true,
+        "display_name": "Neural-Quantum Processor",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_TemporalProcessor_C",
+        "resource_sink_points": 248034,
+        "stack_size": 100
+    },
+    "Desc_TimeCrystal_C": {
+        "can_be_discarded": true,
+        "display_name": "Time Crystal",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_TimeCrystal_C",
+        "resource_sink_points": 960,
+        "stack_size": 200
+    },
+    "Desc_TurboFuel_C": {
+        "can_be_discarded": true,
+        "display_name": "Packaged Turbofuel",
+        "energy_value": 2000.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_TurboFuel_C",
+        "resource_sink_points": 570,
+        "stack_size": 100
+    },
+    "Desc_UraniumCell_C": {
+        "can_be_discarded": true,
+        "display_name": "Encased Uranium Cell",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_UraniumCell_C",
+        "resource_sink_points": 147,
+        "stack_size": 200
+    },
+    "Desc_Water_C": {
+        "can_be_discarded": true,
+        "display_name": "Water",
+        "energy_value": 0.0,
+        "form": "RF_LIQUID",
+        "item_name": "Desc_Water_C",
+        "resource_sink_points": 5,
+        "stack_size": 50000
+    },
+    "Desc_Wire_C": {
+        "can_be_discarded": true,
+        "display_name": "Wire",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Wire_C",
+        "resource_sink_points": 6,
+        "stack_size": 500
+    },
+    "Desc_Wood_C": {
+        "can_be_discarded": true,
+        "display_name": "Wood",
+        "energy_value": 100.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_Wood_C",
+        "resource_sink_points": 30,
+        "stack_size": 200
+    },
+    "Desc_XmasBall1_C": {
+        "can_be_discarded": true,
+        "display_name": "Red FICSMAS Ornament",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasBall1_C",
+        "resource_sink_points": 2,
+        "stack_size": 200
+    },
+    "Desc_XmasBall2_C": {
+        "can_be_discarded": true,
+        "display_name": "Blue FICSMAS Ornament",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasBall2_C",
+        "resource_sink_points": 1,
+        "stack_size": 200
+    },
+    "Desc_XmasBall3_C": {
+        "can_be_discarded": true,
+        "display_name": "Copper FICSMAS Ornament",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasBall3_C",
+        "resource_sink_points": 32,
+        "stack_size": 100
+    },
+    "Desc_XmasBall4_C": {
+        "can_be_discarded": true,
+        "display_name": "Iron FICSMAS Ornament",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasBall4_C",
+        "resource_sink_points": 18,
+        "stack_size": 100
+    },
+    "Desc_XmasBallCluster_C": {
+        "can_be_discarded": true,
+        "display_name": "FICSMAS Ornament Bundle",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasBallCluster_C",
+        "resource_sink_points": 100,
+        "stack_size": 100
+    },
+    "Desc_XmasBow_C": {
+        "can_be_discarded": true,
+        "display_name": "FICSMAS Bow",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasBow_C",
+        "resource_sink_points": 4,
+        "stack_size": 100
+    },
+    "Desc_XmasBranch_C": {
+        "can_be_discarded": true,
+        "display_name": "FICSMAS Tree Branch",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasBranch_C",
+        "resource_sink_points": 2,
+        "stack_size": 500
+    },
+    "Desc_XmasStar_C": {
+        "can_be_discarded": true,
+        "display_name": "FICSMAS Wonder Star",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasStar_C",
+        "resource_sink_points": 6540,
+        "stack_size": 50
+    },
+    "Desc_XmasWreath_C": {
+        "can_be_discarded": true,
+        "display_name": "FICSMAS Wreath",
+        "energy_value": 0.0,
+        "form": "RF_SOLID",
+        "item_name": "Desc_XmasWreath_C",
+        "resource_sink_points": 630,
+        "stack_size": 50
+    }
+}

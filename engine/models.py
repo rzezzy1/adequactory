@@ -79,7 +79,7 @@ class Recipe:
     display_name: str
     ingredients: dict[str, int]
     products: dict[str, int]
-    produced_in: BuildableManufacturer
+    produced_in: str
     recipe_time: float
     variable_power: VariablePower
     alternate: bool
